@@ -1,0 +1,18 @@
+services:
+  testapp-mysql:
+    image: mysql:5.7
+    container_name: testapp-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=testapp
+      - MYSQL_DATABASE=testapp
+      - MYSQL_USER=testapp
+      - MYSQL_PASSWORD=testapp
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - isolated-nw
+
+volumes:
+  dbdata:      

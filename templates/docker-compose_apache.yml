@@ -1,0 +1,21 @@
+services:
+
+  testapp-apache:
+    container_name: testapp-apache
+    build:
+      context: ./docker/apache
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+    volumes:
+      - .:/var/www/html/:rw
+      - ./docker/apache/log:/var/log/apache2:rw
+      - ./docker/apache/vhost:/etc/apache2/sites-available:rw
+    environment:
+        - VIRTUALHOST=testapp.local
+        - VIRTUALIAS=testapp-gestion.local
+    networks:
+      isolated-nw:
+        aliases:
+        - testapp.local          

@@ -1,0 +1,12 @@
+[Wed Jul 20 21:44:36.799858 2022] [ssl:warn] [pid 81:tid 139766631855232] AH01909: testapp.local:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+[Wed Jul 20 21:44:36.806102 2022] [ssl:warn] [pid 81:tid 139766631855232] AH01909: testapp.local:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jul 20 21:44:36.806797 2022] [mpm_event:notice] [pid 81:tid 139766631855232] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1d configured -- resuming normal operations
+[Wed Jul 20 21:44:36.806819 2022] [core:notice] [pid 81:tid 139766631855232] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Jul 23 09:04:54.633950 2022] [ssl:warn] [pid 81:tid 140693611177088] AH01909: testapp.local:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+AH00112: Warning: DocumentRoot [/var/www/html/public] does not exist
+[Sat Jul 23 09:04:54.640750 2022] [ssl:warn] [pid 81:tid 140693611177088] AH01909: testapp.local:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jul 23 09:04:54.641616 2022] [mpm_event:notice] [pid 81:tid 140693611177088] AH00489: Apache/2.4.38 (Debian) OpenSSL/1.1.1n configured -- resuming normal operations
+[Sat Jul 23 09:04:54.641654 2022] [core:notice] [pid 81:tid 140693611177088] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'

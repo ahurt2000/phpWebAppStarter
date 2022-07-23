@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+
+  testapp-apache:
+    container_name: testapp-apache
+    build:
+      context: ./docker/apache
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+    volumes:
+      - .:/var/www/html/:rw
+      - ./docker/apache/log:/var/log/apache2:rw
+      - ./docker/apache/vhost:/etc/apache2/sites-available:rw
+    environment:
+        - VIRTUALHOST=testapp.local
+        - VIRTUALIAS=testapp-admin.local
+    networks:
+      isolated-nw:
+        aliases:
+        - testapp.local          
+
+  testapp-php:
+    container_name: testapp-php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    hostname: testapp-php
+    volumes:
+      - .:/var/www/html/:rw
+      - /home/$USER/.composer:/var/www/.composer:rw
+#      - ./docker/php/conf.d:/usr/local/etc/php/conf.d/:rw
+    networks:
+       isolated-nw:
+          aliases:
+            - php
+
+
+networks:
+  isolated-nw:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.242.0.0/24
