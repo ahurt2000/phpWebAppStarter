@@ -9,7 +9,7 @@ services:
       - MYSQL_USER=testapp
       - MYSQL_PASSWORD=testapp
     ports:
-      - "3307:3306"
+      - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
     networks:
